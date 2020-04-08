@@ -8,12 +8,6 @@ cat << EOF > "$MANIFEST_FILE"
 ${COMMIT_MSG}
 \`\`\`
 
-## Apache Spark
-
-\`\`\`
-$(docker run --rm ${IMAGE_NAME} bash -c '$SPARK_HOME/bin/spark-submit --version' 2>&1)
-\`\`\`
-
 ## Python Packages
 
 \`\`\`
@@ -26,16 +20,6 @@ $(docker run --rm ${IMAGE_NAME} conda info)
 
 \`\`\`
 $(docker run --rm ${IMAGE_NAME} conda list)
-\`\`\`
-
-## R Packages
-
-\`\`\`
-$(docker run --rm ${IMAGE_NAME} R --version)
-\`\`\`
-
-\`\`\`
-$(docker run --rm ${IMAGE_NAME} R --silent -e 'installed.packages(.Library)[, c(1,3)]')
 \`\`\`
 
 ## Apt Packages

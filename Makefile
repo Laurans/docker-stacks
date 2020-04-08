@@ -4,7 +4,7 @@
 
 # Use bash for inline if-statements in arch_patch target
 SHELL:=bash
-OWNER:=jupyter
+OWNER:=alaurans
 ARCH:=$(shell uname -m)
 DIFF_RANGE?=master...HEAD
 
@@ -14,12 +14,10 @@ ALL_STACKS:=base-notebook
 else
 ALL_STACKS:=base-notebook \
 	minimal-notebook \
-	r-notebook \
 	scipy-notebook \
-	tensorflow-notebook \
 	datascience-notebook \
-	pyspark-notebook \
-	all-spark-notebook
+	pytorch-notebook \
+	datascience-pytorch-notebook
 endif
 
 ALL_IMAGES:=$(ALL_STACKS)
